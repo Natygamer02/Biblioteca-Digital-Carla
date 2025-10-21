@@ -1,0 +1,373 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+}
+
+body {
+  background: linear-gradient(90deg, #1E3A8A 0%, #3B82F6 50%, #FFDE21 100%);
+  
+  /* 🚩 CHAVE DA SOLUÇÃO 🚩 */
+  min-height: 100vh; /* Use min-height em vez de height. O conteúdo pode crescer! */
+  display: block;    /* Mude de flex para block para o layout padrão da página */
+  
+  /* Removido: justify-content: center; e align-items: center; */
+  /* Isso força o layout a fluir de cima para baixo normalmente. */
+  
+  color: #fff;
+  overflow-x: hidden; /* Adicione esta linha para evitar rolagem lateral desnecessária */
+}
+
+header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 5%;
+  background: #142850;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
+  color: #fff;
+  z-index: 1000;
+}
+
+
+      header h1 {
+      font-weight: 700;
+      font-size: 1.8rem;
+      letter-spacing: 2px;
+    }
+nav ul {
+  display: flex;
+  list-style: none;
+  gap: 30px;
+}
+
+nav a {
+  color: #fff;
+  text-decoration: none;
+  font-weight: 500;
+  position: relative;
+  transition: 0.3s;
+}
+
+nav a::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    background: #FFDE21;
+    left: 0;
+    bottom: -5px;
+    transition: 0.3s;
+}
+
+nav a:hover::after {
+    width: 100%;
+}
+
+h1 a {
+    color: #fff;
+    text-decoration: none;
+}
+
+h1 a:hover {
+    color: #FFDE21;
+    transition: 0.3s;
+}
+
+.bg-bubbles {
+  position: fixed; /* era absolute */
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+  overflow: hidden;
+  pointer-events: none; /* impede que cliques parem nelas */
+}
+
+
+.bg-bubbles li {
+  position: absolute;
+  list-style: none;
+  display: block;
+  width: 20px;
+  height: 20px;
+  background: rgba(255, 255, 255, 0.5);;
+  bottom: -150px;
+  border-radius: 50%;
+  animation: bubble 25s infinite;
+}
+
+.bg-bubbles li:nth-child(1) { left: 10%; width: 40px; height: 40px; animation-delay: 0s; }
+.bg-bubbles li:nth-child(2) { left: 20%; width: 20px; height: 20px; animation-delay: 2s; animation-duration: 17s; }
+.bg-bubbles li:nth-child(3) { left: 25%; width: 10px; height: 10px; animation-delay: 4s; }
+.bg-bubbles li:nth-child(4) { left: 40%; width: 60px; height: 60px; animation-duration: 22s; }
+.bg-bubbles li:nth-child(5) { left: 70%; width: 20px; height: 20px; animation-delay: 3s; }
+.bg-bubbles li:nth-child(6) { left: 80%; width: 30px; height: 30px; animation-delay: 7s; }
+.bg-bubbles li:nth-child(7) { left: 32%; width: 50px; height: 50px; animation-delay: 15s; animation-duration: 45s; }
+.bg-bubbles li:nth-child(8) { left: 55%; width: 15px; height: 15px; animation-delay: 2s; animation-duration: 35s; }
+.bg-bubbles li:nth-child(9) { left: 25%; width: 25px; height: 25px; animation-delay: 0s; animation-duration: 40s; }
+.bg-bubbles li:nth-child(10) { left: 90%; width: 150px; height: 150px; animation-delay: 11s; }
+
+@keyframes bubble {
+  0% {
+    transform: translateY(0) scale(1);
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(-1000px) scale(1.5);
+    opacity: 0;
+  }
+}
+
+
+
+.multimedia-content {
+    /* Ajuste o preenchimento para não colidir com o header e centralizar o conteúdo */
+    padding: 100px 5% 50px 5%; 
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    position: relative;
+    z-index: 10;
+}
+
+.channel-integration {
+    text-align: center;
+    margin-bottom: 50px;
+}
+
+.channel-integration p {
+    margin-bottom: 25px;
+    font-size: 1.1rem;
+    opacity: 0.9;
+}
+
+.video-gallery {
+    margin-top: 50px;
+}
+
+.category-group {
+    margin-bottom: 40px;
+}
+
+.category-group h3 {
+    text-align: left;
+    font-size: 1.8rem;
+    margin-bottom: 20px;
+    border-bottom: 2px solid #FFDE21; /* Linha de destaque */
+    padding-bottom: 5px;
+}
+
+/* Estrutura de Grid para a Galeria de Vídeos */
+.video-grid {
+    display: grid;
+    /* 2 colunas para telas menores, 3 para telas maiores */
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); 
+    gap: 30px;
+}
+
+.video-card {
+    background: rgba(0, 0, 0, 0.2);
+    border-radius: 10px;
+    overflow: hidden;
+    padding: 15px;
+    text-align: center;
+}
+
+.video-card h4 {
+    font-size: 1.1rem;
+    margin-bottom: 10px;
+    height: 40px; /* Garante que todos os títulos tenham a mesma altura */
+}
+
+/* ------------------------------------------------------------- */
+/* --- CLASSE MÁGICA DE RESPONSIVIDADE DO VÍDEO (Aspect Ratio 16:9) --- */
+/* ------------------------------------------------------------- */
+
+.video-container {
+    position: relative;
+    /* Calcula a altura com base na largura (100% de largura / 16 * 9 = 56.25% de altura) */
+    padding-bottom: 56.25%; 
+    height: 0;
+    overflow: hidden;
+    border-radius: 5px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+}
+
+.video-container iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+/* Ajuste para o Player Principal (opcionalmente maior) */
+.main-embed {
+    max-width: 800px;
+    margin: 0 auto 30px auto;
+}
+
+/* ------------------------------------------------------------- */
+/* --- Estilo para o Botão do Canal --- */
+/* ------------------------------------------------------------- */
+
+.channel-link-section {
+    text-align: center;
+    margin-top: 50px;
+    padding-top: 20px;
+}
+
+.channel-button {
+    display: inline-block;
+    background-color: #FFDE21; /* Amarelo */
+    color: #1E3A8A; /* Azul escuro */
+    padding: 12px 25px;
+    border-radius: 5px;
+    text-decoration: none;
+    font-weight: 700;
+    transition: background-color 0.3s, transform 0.3s;
+    font-size: 1.1rem;
+}
+
+.channel-button:hover {
+    background-color: #ffd000;
+    transform: translateY(-2px);
+}
+
+/* ------------------------------------------------------------- */
+/* --- ESTILO E ANIMAÇÃO DO BOTÃO FLUTUANTE DE INSCRIÇÃO --- */
+/* ------------------------------------------------------------- */
+
+/* Estilo Base: Fixa o botão na tela */
+.floating-subscribe-btn {
+    position: fixed;
+    right: 20px; /* Distância da direita */
+    bottom: 20px; /* Distância de baixo */
+    
+    /* Cores e Aparência */
+    background-color: #FF0000; /* Vermelho do YouTube */
+    color: white;
+    padding: 12px 20px;
+    border-radius: 30px; /* Borda bem arredondada (formato 'pill') */
+    text-decoration: none;
+    font-size: 1rem;
+    font-weight: 700;
+    
+    /* Sombras e Camada */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4);
+    z-index: 999; /* Garante que fique acima de quase tudo */
+    
+    /* Transições suaves para animação */
+    transition: all 0.3s ease;
+    
+    /* Ícone do YouTube */
+    display: flex;
+    align-items: center;
+    gap: 8px; /* Espaço entre o ícone e o texto */
+    
+    /* Inicia a animação de pulsação */
+    animation: pulse 2s infinite; 
+}
+
+/* Efeito Hover (ao passar o mouse) */
+.floating-subscribe-btn:hover {
+    background-color: #CC0000; /* Vermelho mais escuro */
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.6);
+    transform: scale(1.05); /* Pequena expansão */
+    animation: none; /* Pausa a animação de pulsação ao interagir */
+}
+
+/* Animação de Pulsação (para chamar a atenção) */
+@keyframes pulse {
+    0% {
+        transform: scale(1);
+        box-shadow: 0 0 0 0 rgba(255, 0, 0, 0.7);
+    }
+    70% {
+        transform: scale(1.02);
+        box-shadow: 0 0 0 10px rgba(255, 0, 0, 0);
+    }
+    100% {
+        transform: scale(1);
+        box-shadow: 0 0 0 0 rgba(255, 0, 0, 0);
+    }
+}
+
+/* ------------------ ESTILOS GERAIS DE DROPDOWN ------------------ */
+
+.dropdown-css {
+    position: relative;
+}
+
+/* Deixa o link principal (o novo .dropdown-label) igual aos outros links */
+.dropdown-label {
+    color: #fff; 
+    font-weight: 500;
+    text-decoration: none;
+    position: relative;
+    transition: 0.3s;
+    cursor: pointer;
+    display: inline-block; /* Essencial para que o sublinhado ::after cubra a área corretamente */
+    padding: 0;
+}
+
+/* Define o sublinhado amarelo (invisível inicialmente) */
+.dropdown-label::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    background: #FFDE21; /* Corrigido para a cor amarela */
+    left: 0;
+    bottom: -5px;
+    transition: 0.3s;
+}
+
+/* Faz o sublinhado aparecer no hover */
+.dropdown-label:hover::after {
+    width: 100%;
+}
+
+/* ------------------ Configuração e Lógica do Submenu (HOVER) ------------------ */
+
+.dropdown-content-css {
+    background: #142850; /* Seu azul profundo */
+    
+    /* ESCONDE o submenu por padrão */
+    display: none; 
+    
+    position: absolute;
+    min-width: 180px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.5); /* Sombra um pouco mais forte */
+    z-index: 10; /* Garante que fique acima de outros elementos */
+    left: 0; 
+    top: 100%; /* Posiciona logo abaixo do link */
+}
+
+/* MÁGICA DO HOVER: Mostra o submenu quando o mouse está sobre o item da lista (<li>) */
+.dropdown-css:hover .dropdown-content-css {
+    display: block;
+}
+
+
+.dropdown-content-css a {
+    color: white;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+    text-align: left;
+}
+
+.dropdown-content-css a:hover {
+    /* Adiciona um hover de fundo claro para saber onde o mouse está */
+    background-color: rgba(255, 255, 255, 0.1); 
+}

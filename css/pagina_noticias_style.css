@@ -1,0 +1,359 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+/* --- SEÇÃO BODY (ALTERADA) --- */
+body {
+    background: linear-gradient(90deg, #1E3A8A 0%, #3B82F6 50%, #FFDE21 100%);
+    min-height: 100vh;
+    color: #fff;
+    overflow-x: hidden;
+    /* ESSA É A ÚNICA MUDANÇA ESSENCIAL PARA O LAYOUT */
+    padding-top: 80px; 
+}
+
+
+    header {
+      position: absolute;
+      top: 0;
+      width: 100%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 20px 80px;
+      animation: fadeInDown 1s ease-in-out;
+      /* RECOMENDAÇÃO: Fundo Azul Escuro (da sua paleta) com Transparência */
+     background: #142850; /* azul profundo */
+
+    color: #fff;
+    }
+
+header nav {
+    z-index: 101;
+}
+
+header h1 {
+    font-weight: 700;
+    font-size: 1.8rem;
+    letter-spacing: 2px;
+}
+
+nav ul {
+    display: flex;
+    list-style: none;
+    gap: 30px;
+}
+
+nav a {
+    color: #fff;
+    text-decoration: none;
+    font-weight: 500;
+    position: relative;
+    transition: 0.3s;
+}
+
+nav a::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    background: #FFDE21;
+    left: 0;
+    bottom: -5px;
+    transition: 0.3s;
+}
+
+nav a:hover::after {
+    width: 100%;
+}
+
+h1 a {
+    color: #fff;
+    text-decoration: none;
+}
+
+h1 a:hover {
+    color: #FFDE21;
+    transition: 0.3s;
+}
+
+/* --- Bolhas flutuantes (Sem alterações importantes) --- */
+
+.bg-bubbles {
+  position: fixed; /* era absolute */
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+  overflow: hidden;
+  pointer-events: none; /* impede que cliques parem nelas */
+}
+
+
+.bg-bubbles li {
+    position: absolute;
+    list-style: none;
+    display: block;
+    width: 20px;
+    height: 20px;
+    background: rgba(255, 255, 255, 0.5);
+    bottom: -150px;
+    border-radius: 50%;
+    animation: bubble 25s infinite;
+}
+
+.bg-bubbles li:nth-child(1) { left: 10%; width: 40px; height: 40px; animation-delay: 0s; }
+.bg-bubbles li:nth-child(2) { left: 20%; width: 20px; height: 20px; animation-delay: 2s; animation-duration: 17s; }
+.bg-bubbles li:nth-child(3) { left: 25%; width: 10px; height: 10px; animation-delay: 4s; }
+.bg-bubbles li:nth-child(4) { left: 40%; width: 60px; height: 60px; animation-duration: 22s; }
+.bg-bubbles li:nth-child(5) { left: 70%; width: 20px; height: 20px; animation-delay: 3s; }
+.bg-bubbles li:nth-child(6) { left: 80%; width: 30px; height: 30px; animation-delay: 7s; }
+.bg-bubbles li:nth-child(7) { left: 32%; width: 50px; height: 50px; animation-delay: 15s; animation-duration: 45s; }
+.bg-bubbles li:nth-child(8) { left: 55%; width: 15px; height: 15px; animation-delay: 2s; animation-duration: 35s; }
+.bg-bubbles li:nth-child(9) { left: 25%; width: 25px; height: 25px; animation-delay: 0s; animation-duration: 40s; }
+.bg-bubbles li:nth-child(10) { left: 90%; width: 150px; height: 150px; animation-delay: 11s; }
+
+@keyframes bubble {
+    0% {
+        transform: translateY(0) scale(1);
+        opacity: 1;
+    }
+    100% {
+        transform: translateY(-1000px) scale(1.5);
+        opacity: 0;
+    }
+}
+
+/* --- Banner (Sem alterações importantes) --- */
+
+.banner-container {
+    position: relative;
+    width: 90%; /* Ajuste a largura para que não ocupe 100% da tela */
+    max-width: 1000px; /* Define um limite máximo */
+    height: 300px;
+    overflow: hidden;
+    margin: 20px auto; /* Adiciona margem superior e centraliza horizontalmente */
+    border-radius: 10px; /* Adiciona um toque visual */
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+}
+
+.banner-slide {
+    display: none;
+    width: 100%;
+    height: 100%;
+}
+
+.banner-slide img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.banner-slide.active {
+    display: block;
+}
+
+.banner-prev, .banner-next {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(0,0,0,0.5); /* Corrigido para um fundo mais visível */
+    border: none;
+    font-size: 2rem;
+    color: #fff;
+    padding: 5px 15px;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: background 0.3s;
+}
+
+.banner-prev:hover, .banner-next:hover {
+    background: rgba(0,0,0,0.8);
+}
+
+.banner-prev { left: 10px; }
+.banner-next { right: 10px; }
+
+/* --- Layout Principal: Mini notícias à esquerda + notícia principal à direita --- */
+.main-container {
+    /* ✨ MUDANÇA: Aumenta a proporção da coluna da direita (notícia principal) */
+    grid-template-columns: 35% 65%; /* Esquerda mini (35%), Direita principal (65%) */
+    gap: 30px;
+    width: 90%;
+    max-width: 1200px; /* Aumentar um pouco o max-width pode ajudar a distribuir */
+    
+    /* ✨ MUDANÇA: Adiciona mais margem superior para descer o conteúdo */
+    margin: 60px auto 40px auto; /* 60px em cima, 40px embaixo */
+    
+    display: grid;
+    /* max-width: 1000px; - Removido/Ajustado */
+    /* margin: 40px auto; - Removido/Ajustado */
+    align-items: start;
+}
+
+/* --- Notícia Principal (lado direito) --- */
+.news-content {
+    /* Adicione um padding interno para afastar o conteúdo das bordas */
+    padding: 20px;
+    background: rgba(0, 0, 0, 0.3); /* Um fundo sutil para destacá-lo */
+    border-radius: 10px;
+    
+    /* Para centralizar o conteúdo da notícia dentro do container */
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Centraliza a imagem e texto horizontalmente */
+    text-align: center;
+}
+
+/* --- Mini Notícias (lado esquerdo) --- */
+.news-cards {
+    display: grid;
+    grid-template-columns: 1fr 1fr; /* duas colunas */
+    gap: 15px;
+    justify-items: center; /* centraliza cada card dentro da coluna */
+}
+
+.news-card {
+    width: 100%;
+    max-width: 200px;
+    background: rgba(0, 0, 0, 0.3);
+    padding: 10px;
+    border-radius: 10px;
+    text-align: center;
+    cursor: pointer;
+    transition: transform 0.3s, background 0.3s;
+}
+
+.news-card:hover {
+    transform: translateY(-3px);
+    background: rgba(255, 255, 255, 0.2);
+}
+
+.news-card img {
+    width: 100%;
+    height: 100px;
+    object-fit: cover;
+    border-radius: 8px;
+    margin-bottom: 8px;
+}
+
+.news-card h4 {
+    text-align: center;
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: #FFDE21;
+    margin-bottom: 5px;
+    white-space: normal; /* permite quebra de linha */
+    overflow: hidden;
+    text-overflow: ellipsis;
+
+}
+
+.news-card h3 {
+    text-align: center;
+    font-size: 1rem;           /* tamanho mais natural */
+    line-height: 1.4;         /* espaçamento confortável */
+    color: #fff;
+    font-weight: 600;         /* opcional, para destacar */
+    max-height: none;         /* remove limitação de altura */
+    overflow: visible;        /* não esconde texto */
+    text-overflow: clip;      /* comportamento padrão */
+    white-space: normal;      /* permite quebra natural */
+    margin: 5px 0;           /* espaço entre outros elementos */
+}
+
+.news-content h2,
+.news-content p {
+    text-align: left; /* Alinha o texto à esquerda para melhor leitura */
+    width: 80%; /* Limita a largura do texto para corresponder à imagem */
+    margin: 0 auto 10px auto;
+}
+
+/* Ajuste no controle da imagem para que ela se centre e respeite a coluna maior */
+#news-img {
+    /* 🚩 1. Limita a largura da imagem */
+    width: 80%; /* Ocupa 80% do container .news-content (que agora é 65% da tela) */
+    max-width: 100%;
+    /* 🚩 2. Impede que a imagem "esprema" o texto */
+    flex-shrink: 0; 
+    /* 3. Estilos visuais */
+    height: auto;
+    border-radius: 10px;
+    object-fit: cover;
+    margin-bottom: 20px; /* Espaço entre imagem e título */
+}
+/* ------------------ ESTILOS GERAIS DE DROPDOWN ------------------ */
+
+.dropdown-css {
+    position: relative;
+}
+
+/* Deixa o link principal (o novo .dropdown-label) igual aos outros links */
+.dropdown-label {
+    color: #fff; 
+    font-weight: 500;
+    text-decoration: none;
+    position: relative;
+    transition: 0.3s;
+    cursor: pointer;
+    display: inline-block; /* Essencial para que o sublinhado ::after cubra a área corretamente */
+    padding: 0;
+}
+
+/* Define o sublinhado amarelo (invisível inicialmente) */
+.dropdown-label::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    background: #FFDE21; /* Corrigido para a cor amarela */
+    left: 0;
+    bottom: -5px;
+    transition: 0.3s;
+}
+
+/* Faz o sublinhado aparecer no hover */
+.dropdown-label:hover::after {
+    width: 100%;
+}
+
+/* ------------------ Configuração e Lógica do Submenu (HOVER) ------------------ */
+
+.dropdown-content-css {
+    background: #142850; /* Seu azul profundo */
+    
+    /* ESCONDE o submenu por padrão */
+    display: none; 
+    
+    position: absolute;
+    min-width: 180px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.5); /* Sombra um pouco mais forte */
+    z-index: 10; /* Garante que fique acima de outros elementos */
+    left: 0; 
+    top: 100%; /* Posiciona logo abaixo do link */
+}
+
+/* MÁGICA DO HOVER: Mostra o submenu quando o mouse está sobre o item da lista (<li>) */
+.dropdown-css:hover .dropdown-content-css {
+    display: block;
+}
+
+
+.dropdown-content-css a {
+    color: white;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+    text-align: left;
+}
+
+.dropdown-content-css a:hover {
+    /* Adiciona um hover de fundo claro para saber onde o mouse está */
+    background-color: rgba(255, 255, 255, 0.1); 
+}
