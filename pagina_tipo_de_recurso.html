@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Tipo de Recurso - Biblioteca Digital</title>
+    <link rel="stylesheet" href="css/pagina_tipo_de_recurso_style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+</head>
+
+<body>
+    <header>
+        <h1><a href="index.html">Biblioteca Digital</a></h1>
+        <nav>
+            <ul>
+                <li class="dropdown-css">
+    <a href="#" class="dropdown-label">Acervo Digital</a> 
+    
+    <div class="dropdown-content-css">
+        <a href="pagina_tipo_de_recurso.html">Tipo de Recurso</a>
+        <a href="pagina_finalidade_pedagogica.html">Finalidade Pedagógica</a>
+    </div>
+</li>
+                </li>
+                <li><a href="pagina_noticias.html">Notícias</a></li>
+                <li><a href="pagina_multimidia.html">Multimídia</a></li>
+                <li><a href="pagina_sobre.html">Sobre</a></li>
+                <li><a href="pagina_quemsomos.html">Quem somos</a></li>
+                <li><a href="pagina_duvidas.html">Dúvidas</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <br><br><br><br><br><br>
+
+    <!-- Bolhas de fundo -->
+    <ul class="bg-bubbles">
+        <li></li><li></li><li></li><li></li><li></li>
+        <li></li><li></li><li></li><li></li><li></li>
+    </ul>
+
+    <main class="acervo-main">
+        <h1><u>Tipos de Recurso</u></h1>
+<div class="filter-bar-wrapper">
+        <!-- Filtros de categoria -->
+        <div class="filters-container type-filter">
+            <button class="filter-btn active" data-filter="all">Todas as Categorias</button>
+            <button class="filter-btn" data-filter="plano-aula">Planos de Aula</button>
+            <button class="filter-btn" data-filter="videos-educativos">Vídeos Educativos</button>
+            <button class="filter-btn" data-filter="jogos-educativos">Jogos Educativos</button>
+            <button class="filter-btn" data-filter="infograficos">Infográficos</button>
+            <button class="filter-btn" data-filter="artigo-tese">Artigo Acadêmico/Dissertação/Tese</button>
+            <button class="filter-btn" data-filter="livros-ebooks">Livros-E-books</button>
+            <button class="filter-btn" data-filter="hqs-educativas">Hqs e Tirinhas Educativas</button>
+            <button class="filter-btn" data-filter="story-digital">Storytelling Digital</button>
+            <button class="filter-btn" data-filter="oficina-pratica">Oficina Prática</button>
+            <button class="filter-btn" data-filter="atividades-ludicas">Atividades Lúdicas</button>
+            <button class="filter-btn" data-filter="recursos-interativos">Recursos Digitais Interativos</button>
+            <button class="filter-btn" data-filter="mapas-diagramas">Mapas e Diagramas</button>
+        </div>
+
+        <div class="search-container">
+    <input type="text" id="search-input" placeholder="Pesquisar por Título ou Autor...">
+    <i class="fas fa-search search-icon"></i>
+</div>
+
+        <!-- Filtro de faixa etária -->
+        <div class="age-dropdown-container">
+            <button id="age-dropdown-toggle" class="dropdown-toggle-btn">
+                <i class="fas fa-child"></i> Faixa Etária: Todas
+            </button>
+
+            <div id="age-dropdown-menu" class="dropdown-menu hidden">
+                <a href="#" class="age-item active" data-filter-age="all-age">Todas as Idades</a>
+                <a href="#" class="age-item" data-filter-age="infantil">Infantil (até 10 anos)</a>
+                <a href="#" class="age-item" data-filter-age="infanto-juvenil">Infanto-Juvenil (11-17 anos)</a>
+                <a href="#" class="age-item" data-filter-age="adulto">Adulto/Professores</a>
+            </div>
+        </div>
+
+        <div class="results-info">
+            <p class="item-count-display">
+    Total de Itens Exibidos: <span id="item-count">0</span>
+</p>
+</div>
+</div>
+
+        <!-- Livros -->
+        <div class="bookshelf-container">
+            <div class="book-card" data-category="recursos-interativos adulto">
+                <img src="img/capa1.jpg" alt="Capa do Livro 1" class="book-cover">
+                <div class="book-info">
+                    <h3>O Cérebro Autista</h3>
+                    <p>Autor: Temple Grandin</p>
+                    <a href="#" class="read-link" target="_blank">Acessar</a>
+                </div>
+            </div>
+
+            <div class="book-card" data-category="hqs-educativas infanto-juvenil">
+                <img src="img/capa2.jpg" alt="Capa do Livro 2" class="book-cover">
+                <div class="book-info">
+                    <h3>o Autismo</h3>
+                    <p>Autor: Maria da Silva</p>
+                    <a href="#" class="read-link" target="_blank">Acessar</a>
+                </div>
+            </div>
+
+             <div class="book-card" data-category="hqs-educativas infanto-juvenil">
+                <img src="img/capa2.jpg" alt="Capa do Livro 2" class="book-cover">
+                <div class="book-info">
+                    <h3>99 Autismo</h3>
+                    <p>Autor: Maria da Silva</p>
+                    <a href="#" class="read-link" target="_blank">Acessar</a>
+                </div>
+            </div>
+
+             <div class="book-card" data-category="hqs-educativas infanto-juvenil">
+                <img src="img/capa2.jpg" alt="Capa do Livro 2" class="book-cover">
+                <div class="book-info">
+                    <h3>6Autismo</h3>
+                    <p>Autor: Maria da Silva</p>
+                    <a href="#" class="read-link" target="_blank">Acessar</a>
+                </div>
+            </div>
+
+            <div class="book-card" data-category="hqs-educativas infanto-juvenil">
+                <img src="img/capa2.jpg" alt="Capa do Livro 2" class="book-cover">
+                <div class="book-info">
+                    <h3>5Autismo</h3>
+                    <p>Autor: Maria da Silva</p>
+                    <a href="#" class="read-link" target="_blank">Acessar</a>
+                </div>
+            </div>
+
+            <div class="book-card" data-category="hqs-educativas infanto-juvenil">
+                <img src="img/capa2.jpg" alt="Capa do Livro 2" class="book-cover">
+                <div class="book-info">
+                    <h3>4Autismo</h3>
+                    <p>Autor: Maria da Silva</p>
+                    <a href="#" class="read-link" target="_blank">Acessar</a>
+                </div>
+            </div>
+
+             <div class="book-card" data-category="hqs-educativas infanto-juvenil">
+                <img src="img/capa2.jpg" alt="Capa do Livro 2" class="book-cover">
+                <div class="book-info">
+                    <h3>3Autismo</h3>
+                    <p>Autor: Maria da Silva</p>
+                    <a href="#" class="read-link" target="_blank">Acessar</a>
+                </div>
+            </div>
+
+             <div class="book-card" data-category="hqs-educativas adulto">
+                <img src="img/capa2.jpg" alt="Capa do Livro 2" class="book-cover">
+                <div class="book-info">
+                    <h3>2Autismo</h3>
+                    <p>Autor: Maria da Silva</p>
+                    <a href="#" class="read-link" target="_blank">Acessar</a>
+                </div>
+            </div>
+
+             <div class="book-card" data-category="hqs-educativas adulto">
+                <img src="img/capa2.jpg" alt="Capa do Livro 2" class="book-cover">
+                <div class="book-info">
+                    <h3>Autismo</h3>
+                    <p>Autor: Maria da Silva</p>
+                    <a href="#" class="read-link" target="_blank">Acessar</a>
+                </div>
+            </div>
+
+
+            <div class="book-card" data-category="mapas-diagramas infantil">
+                <img src="img/capa2.jpg" alt="Capa do Livro 3" class="book-cover">
+                <div class="book-info">
+                    <h3>Mapa Interativo para Crianças</h3>
+                    <p>Autor: João Santos</p>
+                    <a href="#" class="read-link" target="_blank">Acessar</a>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <script src="javascript/pagina_tipo_de_recurso_acervo.js"></script>
+</body>
+
+</html>

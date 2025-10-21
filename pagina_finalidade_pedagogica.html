@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Finalidade Pedagógica- Biblioteca Digital</title>
+    <link rel="stylesheet" href="css/pagina_finalidade_pedagogica_style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+</head>
+
+<body>
+    <header>
+        <h1><a href="index.html">Biblioteca Digital</a></h1>
+        <nav>
+            <ul>
+                <li class="dropdown-css">
+                    <a href="#" class="dropdown-label">Acervo Digital</a>
+
+                    <div class="dropdown-content-css">
+                        <a href="pagina_tipo_de_recurso.html">Tipo de Recurso</a>
+                        <a href="pagina_finalidade_pedagogica.html">Finalidade Pedagógica</a>
+                    </div>
+                </li>
+                <li><a href="pagina_noticias.html">Notícias</a></li>
+                <li><a href="pagina_multimidia.html">Multimídia</a></li>
+                <li><a href="pagina_sobre.html">Sobre</a></li>
+                <li><a href="pagina_quemsomos.html">Quem somos</a></li>
+                <li><a href="pagina_duvidas.html">Dúvidas</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+
+    <!-- Bolhas de fundo -->
+    <ul class="bg-bubbles">
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+    </ul>
+
+    <main class="acervo-main">
+        <h1><u>Finalidade Pedagógica</u></h1>
+<div class="filter-bar-wrapper">
+        <!-- Filtros de categoria -->
+        <div class="filters-container type-filter">
+            <button class="filter-btn active" data-filter="all">Todas as Categorias</button>
+            <button class="filter-btn" data-filter="inclusao">Inclusão</button>
+            <button class="filter-btn" data-filter="neurodiversidades">Neurodiversidades</button>
+            <button class="filter-btn" data-filter="diversidade">Diversidade</button>
+            <button class="filter-btn" data-filter="cidadania-etica">Cidadania e Ética</button>
+            <button class="filter-btn" data-filter="habilidades-socioemocionais">Habilidades Socioemocionais</button>
+            <button class="filter-btn" data-filter="aprendizagem-colaborativa">Aprendizagem Colaborativa</button>
+            <button class="filter-btn" data-filter="criatividade-inovacao">Criatividade e Inovação</button>
+            <button class="filter-btn" data-filter="pensamento-critico">Pensamento Crítico</button>
+            <button class="filter-btn" data-filter="educacao-ambiental">Educação Ambiental</button>
+            <button class="filter-btn" data-filter="cultura-digital">Cultura Digital</button>
+            <button class="filter-btn" data-filter="direitos-humanos">Direitos Humanos</button>
+            <button class="filter-btn" data-filter="autonomia-protagonismo">Autonomia e Protagonismo do Aluno</button>
+        </div>
+
+<div class="search-container">
+    <input type="text" id="search-input" placeholder="Pesquisar por Título ou Autor...">
+    <i class="fas fa-search search-icon"></i>
+</div>
+        <!-- Filtro de faixa etária -->
+        <div class="age-dropdown-container">
+            <button id="age-dropdown-toggle" class="dropdown-toggle-btn">
+                <i class="fas fa-child"></i> Faixa Etária: Todas
+            </button>
+
+            <div id="age-dropdown-menu" class="dropdown-menu hidden">
+                <a href="#" class="age-item active" data-filter-age="all-age">Todas as Idades</a>
+                <a href="#" class="age-item" data-filter-age="infantil">Infantil (até 10 anos)</a>
+                <a href="#" class="age-item" data-filter-age="infanto-juvenil">Infanto-Juvenil(11-17 anos)</a>
+                <a href="#" class="age-item" data-filter-age="adulto">Adulto/Professores</a>
+            </div>
+        </div>
+<div class="results-info">
+            <p class="item-count-display">
+    Total de Itens Exibidos: <span id="item-count">0</span>
+</p>
+</div>
+</div>
+        <!-- Livros -->
+        <div class="bookshelf-container">
+            <div class="book-card" data-category="inclusao infantil">
+                <img src="img/finalidade_pedagogica/capas_livros/Educação Inclusiva na Educação Infantil.jpg" alt="Capa do Livro 1" class="book-cover">
+                <div class="book-info">
+                    <h3>Educação Inclusiva na Educação Infantil</h3>
+                    <p>Autor: Alessandra Oliveira de Souza Almeida</p>
+                    <a href="https://amzn.to/42EuHky" class="read-link" target="_blank">Acessar</a>
+                </div>
+            </div>
+
+            <div class="book-card" data-category="neurodiversidades adulto">
+                <img src="img/finalidade_pedagogica/capas_livros/como é ser autista.jpg" alt="Capa do Livro 2" class="book-cover">
+                <div class="book-info">
+                    <h3>Como é ser autista</h3>
+                    <p>Autor: Charlotte Amelia Poe</p>
+                    <a href="pdfs/Como é ser autista.pdf" class="read-link" download> Baixar PDF</a>
+                    <!-- Ler PDFS-->
+                </div>
+            </div>
+
+            <div class="book-card" data-category="inclusao educacao-ambiental infanto-juvenil">
+                <img src="img/finalidade_pedagogica/capas_livros/Sustentabilidade & Acessibilidade jorge amaro.jpg" alt="Capa do Livro 2" class="book-cover">
+                <div class="book-info">
+                    <h3>Sustentabilidade & Acessibilidade: Educação Ambiental, Inclusão e Direitos da Pessoa com Deficiência</h3>
+                    <p>Autor: Jorge Amaro de Souza Borges</p>
+                    <a href="#" class="read-link" target="_blank">Acessar</a>
+                </div>
+            </div>
+
+            <div class="book-card" data-category="inclusao  infanto-juvenil">
+                <img src="img/finalidade_pedagogica/capas_livros/Política da Pessoa com Deficiencia no Brasil Percorrendo o Labirinto.png" alt="Capa do Livro 2" class="book-cover">
+                <div class="book-info">
+                    <h3>Política da Pessoa com Deficiência no Brasil: Percorrendo o Labirinto</h3>
+                    <p>Autor: Jorge Amaro de Souza Borges</p>
+                    <a href="#" class="read-link" target="_blank">Acessar</a>
+                </div>
+            </div>
+
+
+            <div class="book-card" data-category="inclusao infantil">
+                <img src="img/finalidade_pedagogica/capas_livros/Deninho e a Aventura da Inclusao.jpg" alt="Capa do Livro 2" class="book-cover">
+                <div class="book-info">
+                    <h3>Deninho e a Aventura da Inclusão</h3>
+                    <p>Autor: Heldene Leicam</p>
+                    <a href="#" class="read-link" target="_blank">Acessar</a>
+                </div>
+            </div>
+
+            <div class="book-card" data-category="inclusao infantil">
+                <img src="img/finalidade_pedagogica/capas_livros/A Pecinha que Fazia Treco.jpg" alt="Capa do Livro 2" class="book-cover">
+                <div class="book-info">
+                    <h3>A Pecinha que Fazia Treco.jpg</h3>
+                    <p>Autor: Heldene Leicam</p>
+                    <a href="#" class="read-link" target="_blank">Acessar</a>
+                </div>
+            </div>
+
+
+            <div class="book-card" data-category="inclusao infantil">
+                <img src="img/finalidade_pedagogica/capas_livros/O Que É Educação Inclusiva – Coleção Primeiros Passos.jpg" alt="Capa do Livro 2" class="book-cover">
+                <div class="book-info">
+                    <h3>O Que É Educação Inclusiva – Coleção Primeiros Passos</h3>
+                    <p>Autor: Emílio Figueira</p>
+                    <a href="#" class="read-link" target="_blank">Acessar</a>
+                </div>
+            </div>
+
+            <div class="book-card" data-category="inclusao infanto-juvenil">
+                <img src="img/finalidade_pedagogica/capas_livros/pedagogia_da_esperanca.jpg" alt="Capa do Livro 2" class="book-cover">
+                <div class="book-info">
+                    <h3>Pedagogia da Esperança</h3>
+                    <p>Autor: Paulo Freire</p>
+                    <a href="#" class="read-link" target="_blank">Acessar</a>
+                </div>
+            </div>
+
+            <div class="book-card" data-category="inclusao infanto-juvenil">
+                <img src="img/finalidade_pedagogica/capas_livros/Educar em Direitos Humanos Construir Democracia.jpg" alt="Capa do Livro 2" class="book-cover">
+                <div class="book-info">
+                    <h3>Educar em Direitos Humanos Construir Democracia</h3>
+                    <p>Autor: Vera Maria Candau e Susana Sacavino</p>
+                    <a href="#" class="read-link" target="_blank">Acessar</a>
+                </div>
+            </div>
+
+<div class="book-card" data-category="inclusao adulto">
+    <img src="img/finalidade_pedagogica/capas_livros/Educação Inclusiva Articulaçoes Teórico-praticas no Contexto do ProfE.jpg" alt="Capa do Livro 3" class="book-cover">
+    <div class="book-info">
+        <h3>Educação Inclusiva: Articulações Teórico-práticas no Contexto do ProfE</h3>
+        <p>Autor: Gizeli Aparecida Ribeiro de Alencar, Solange Franci Raimundo Yaegashi, Roseneide Maria Batista Cirino</p>
+        <a href="#" class="read-link" target="_blank">Acessar</a>
+    </div>
+</div>
+
+<div class="book-card" data-category="inclusao adulto">
+    <img src="img/finalidade_pedagogica/capas_livros/Removendo Barreiras Para a Aprendizagem.jpg" alt="Capa do Livro 3" class="book-cover">
+    <div class="book-info">
+        <h3>Removendo Barreiras Para a Aprendizagem</h3>
+        <p>Autor: Rosita Edler Carvalho</p>
+        <a href="#" class="read-link" target="_blank">Acessar</a>
+    </div>
+</div>
+
+<div class="book-card" data-category="inclusao adulto">
+    <img src="img/finalidade_pedagogica/capas_livros/Educacao Inclusiva Com os Pingos nos Is.jpg" alt="Capa do Livro 3" class="book-cover">
+    <div class="book-info">
+        <h3>Educação Inclusiva: Com os Pingos nos Is</h3>
+        <p>Autor: Rosita Edler Carvalho</p>
+        <a href="#" class="read-link" target="_blank">Acessar</a>
+    </div>
+</div>
+
+<div class="book-card" data-category="inclusao adulto">
+    <img src="img/finalidade_pedagogica/capas_livros/Capacitismo O Mito da Capacidade.jpg" alt="Capa do Livro 3" class="book-cover">
+    <div class="book-info">
+        <h3>Capacitismo: O Mito da Capacidade</h3>
+        <p>Autor: Victor Di Marco</p>
+        <a href="#" class="read-link" target="_blank">Acessar</a>
+    </div>
+</div>
+
+    </main>
+
+    <script src="javascript/pagina_finalidade_pedagogica_acervo.js"></script>
+</body>
+
+</html>

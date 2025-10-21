@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Notícias - Biblioteca Digital</title>
+    <link rel="stylesheet" href="css/pagina_noticias_style.css">
+</head>
+
+<body>
+    <header>
+        <h1><a href="index.html">Biblioteca Digital</a></h1>
+        <nav>
+            <ul>
+                <li class="dropdown-css">
+                    <a href="#" class="dropdown-label">Acervo Digital</a>
+
+                    <div class="dropdown-content-css">
+                        <a href="pagina_tipo_de_recurso.html">Tipo de Recurso</a>
+                        <a href="pagina_finalidade_pedagogica.html">Finalidade Pedagógica</a>
+                    </div>
+                </li>
+
+                <li><a href="pagina_noticias.html">Notícias</a></li>
+                <li><a href="pagina_multimidia.html">Multimídia</a></li>
+                <li><a href="pagina_sobre.html">Sobre</a></li>
+                <li><a href="pagina_quemsomos.html">Quem somos</a></li>
+                <li><a href="pagina_duvidas.html">Dúvidas</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Bolhas de fundo -->
+    <ul class="bg-bubbles">
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+    </ul>
+    <br>
+    <br>
+    <br>
+    <!-- Banner -->
+    <div class="banner-container">
+        <div class="banner-slide active"><img src="img/pagina_noticias/banners_slide/banner_noticias.png" alt="Banner 1"></div>
+        <div class="banner-slide"><img src="img/pagina_noticias/banners_slide/banner2.jpg" alt="Banner 2"></div>
+        <div class="banner-slide"><img src="img/pagina_noticias/banners_slide/banner3.jpg" alt="Banner 3"></div>
+        <button class="banner-prev">&#10094;</button>
+        <button class="banner-next">&#10095;</button>
+    </div>
+    <!-- Área de notícias -->
+    <div class="main-container">
+        <!-- Cards na lateral direita -->
+        <div class="news-cards">
+            <div class="news-card" data-index="0">
+                <img src="img/pagina_noticias/vetores/hora_historia.jpg" alt="Hora da História">
+                <h3>Hora da História</h3>
+                <h4>Semanal</h4>
+            </div>
+            <div class="news-card" data-index="1">
+                <img src="img/pagina_noticias/vetores/sugestao_literaria.jpg" alt="Mini Notícia 2">
+                <h3>Sugestão Literária</h3>
+                <h4>Semanal</h4>
+            </div>
+            <div class="news-card" data-index="2">
+                <img src="img/pagina_noticias/vetores/dica_pedagogica.jpg" alt="Mini Notícia 3">
+                <h3>Dica Pedagógica</h3>
+                <h4>Semanal</h4>
+            </div>
+            <div class="news-card" data-index="3">
+                <img src="img/pagina_noticias/vetores/momento_socioemocional.jpg" alt="Mini Notícia 4">
+                <h3>Momento Socioemocional</h3>
+                <h4>Semanal</h4>
+            </div>
+            <div class="news-card" data-index="4">
+                <img src="img/pagina_noticias/vetores/vozes_educadores.jpg" alt="Mini Notícia 5">
+                <h3>Vozes dos Educadores</h3>
+                <h4>Mensal</h4>
+            </div>
+            <div class="news-card" data-index="5">
+                <img src="img/pagina_noticias/vetores/historia_vida.jpg" alt="Mini Notícia 6">
+                <h3>História de Vida</h3>
+                <h4>Mensal</h4>
+            </div>
+            <div class="news-card" data-index="6">
+                <img src="img/pagina_noticias/vetores/conversa_especialistas.jpg" alt="Mini Notícia 7">
+                <h3>Conversa com Especialista</h3>
+                <h4>Quinzenal</h4>
+            </div>
+            <div class="news-card" data-index="7">
+                <img src="img/pagina_noticias/vetores/cultura_foco.jpg" alt="Mini Notícia 8">
+                <h3>Cultura em Foco</h3>
+                <h4>Quinzenal</h4>
+            </div>
+            <div class="news-card" data-index="8">
+                <img src="img/pagina_noticias/vetores/tecnodica.jpg" alt="Mini Notícia 9">
+                <h3>Tecnodica</h3>
+                <h4>Quinzenal</h4>
+            </div>
+            <div class="news-card" data-index="9">
+                <img src="img/pagina_noticias/vetores/arte_inclusao.jpg" alt="Mini Notícia 10">
+                <h3>Arte e Inclusão</h3>
+                <h4>Quinzenal</h4>
+            </div>
+            <!-- Adicione até 10 cards -->
+        </div>
+        <!-- Conteúdo da notícia -->
+        <div class="news-content">
+            <br>
+            <br>
+            <br>
+            <img src="img/pagina_noticias/apresentacao_inicial/gif_jornal.gif" alt="Notícias" id="news-img">
+            <h2 id="news-title">Escolha sua Notícia!</h2>
+            <p id="news-text">Quadros semanais, quinzenais e mensais!</p>
+        </div>
+    </div>
+    <script src="javascript/pagina_noticias.js"></script>
+
+</body>
+
+</html>
